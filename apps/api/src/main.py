@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Query # pyright: ignore[reportMissingImports]
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
-from py_finance import get_stock_history, StockHistory # pyright: ignore[reportMissingImports]
+from py_finance import get_stock_history # pyright: ignore[reportMissingImports]
 
 # Create FastAPI app
 app = FastAPI(title="API")
