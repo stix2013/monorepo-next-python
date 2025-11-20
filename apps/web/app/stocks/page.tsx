@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { StockHistory } from '@stocks/shared';
-import { StockChart } from '@stocks/ui';
+import { StockChart, ForecastWidget } from '@stocks/ui';
 import { JSX } from 'react/jsx-runtime';
 
 export default function StockHistoryPage(): JSX.Element {
@@ -132,6 +132,9 @@ export default function StockHistoryPage(): JSX.Element {
             </div>
           </div>
         )}
+
+        {/* Forecast Widget */}
+        {data && <ForecastWidget symbol={data.symbol} />}
       </div>
     </div>
   );

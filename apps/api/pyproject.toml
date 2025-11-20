@@ -11,6 +11,7 @@ dependencies = [
     "python-dotenv>=1.0.0",
     # local
     "py-finance",
+    "ml-forecast",
 ]
 
 [build-system]
@@ -23,6 +24,7 @@ packages = ["src"]
 [tool.uv.sources]
 # alternative local path reference
 py-finance = { path = "../../packages/py-finance" }
+ml-forecast = { path = "../../packages/ml-forecast" }
 
 [dependency-groups]  # Add this section
 dev = ["pytest", "black", "ruff", "pytest-asyncio", "httpx"]

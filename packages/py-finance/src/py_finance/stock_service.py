@@ -40,6 +40,7 @@ def get_stock_history(
     target_currency: Optional[str] = None
 ) -> StockHistory:
     """Fetch historical stock data with optional currency conversion."""
+    print(f"Fetching stock history for {symbol} over period {period} with target currency {target_currency}")
     ticker = yf.Ticker(symbol)
     hist = ticker.history(period=period, interval="1d")
     

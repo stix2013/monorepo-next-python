@@ -1,7 +1,8 @@
-from fastapi import FastAPI, Query # pyright: ignore[reportMissingImports]
+from fastapi import FastAPI, Query, HTTPException # pyright: ignore[reportMissingImports]
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
 from py_finance import get_stock_history # pyright: ignore[reportMissingImports]
+from ml_forecast.service import StockForecaster # pyright: ignore[reportMissingImports]
 
 # Create FastAPI app
 app = FastAPI(title="API")
@@ -35,3 +36,25 @@ def get_stock_history_endpoint(
 ):
     """Get historical stock data with optional currency conversion"""
     return get_stock_history(symbol, period, target_currency)
+
+@app.get("/api/stock/{symbol}/forecast")
+def get_stock_forecast(
+    symbol: str,
+    period: str = "2y",
+    retrain: bool = Query(False, description="Force retrain model")
+):
+    """
+    Predict next day's closing price for a stock symbol.
+    Uses 60-day lookback LSTM model.
+    """
+    try:
+        forecaster = StockForecaster(symbol)
+        
+        if retrain or not forecaster.model:
+            forecaster.train(period)
+        
+        forecast = forecaster.predict_next_day(period)
+        return forecast
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

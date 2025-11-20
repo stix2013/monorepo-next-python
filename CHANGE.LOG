@@ -1,0 +1,26 @@
+# Change Log
+
+## Version 0.2.0
+
+### New Features
+
+- **Stock Price Forecasting**: Implemented a new feature to forecast future stock prices using a machine learning model.
+  - A new API endpoint `/api/forecast/{symbol}` provides the forecast data.
+  - The frontend now includes a `ForecastWidget` on the stock details page to visualize the forecast.
+
+### Detailed Changes
+
+#### `apps/api`
+- Added new machine learning dependencies including `tensorflow`, `scikit-learn`, and `keras`.
+- Implemented the `/forecast/{symbol}` endpoint in `main.py`.
+- Added a new package `packages/ml-forecast` to house the machine learning model and forecasting service.
+
+#### `apps/web`
+- Added a new `ForecastWidget` to the stock details page to display the forecast data.
+
+#### `packages/ui`
+- Created a reusable `Forecast` component.
+- Exported the `ForecastWidget` for use in the web app.
+
+#### `packages/py-finance`
+- Added logging to `stock_service.py` for easier debugging.
