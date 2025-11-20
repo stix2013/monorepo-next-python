@@ -134,7 +134,7 @@ export default function StockHistoryPage(): JSX.Element {
         )}
 
         {/* Forecast Widget */}
-        {data && <ForecastWidget symbol={data.symbol} />}
+        {/* {data && <ForecastWidget symbol={data.symbol} />} */}
       </div>
     </div>
   );
