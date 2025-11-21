@@ -9,6 +9,7 @@ dependencies = [
     "uvicorn[standard]>=0.38.0",
     "pydantic>=2.12.0",
     "python-dotenv>=1.0.0",
+    "yfinance>=0.2.40",
     # local
     "py-finance",
     "ml-forecast",
@@ -27,4 +28,11 @@ py-finance = { path = "../../packages/py-finance" }
 ml-forecast = { path = "../../packages/ml-forecast" }
 
 [dependency-groups]  # Add this section
-dev = ["pytest", "black", "ruff", "pytest-asyncio", "httpx"]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+    "pytest-asyncio",
+    "httpx",
+    "logging>=0.4.9.6",
+]

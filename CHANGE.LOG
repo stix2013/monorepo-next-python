@@ -1,5 +1,23 @@
 # Change Log
 
+## Version 0.2.1
+
+### Improvements
+
+- **Real-time Data Migration**: Replaced `Stockstir` with `YFinance` for the `/api/sse/stocks` endpoint.
+  - Improved data update frequency from 5 minutes to **5 seconds**.
+  - Implemented non-blocking I/O for `yfinance` calls to prevent SSE connection drops.
+  - Added "jitter" to stock prices to simulate activity during off-market hours.
+
+### Detailed Changes
+
+#### `apps/api`
+- Updated `pyproject.toml` to replace `stockstir` with `yfinance`.
+- Refactored `main.py`:
+  - `stock_generator` now runs in a separate thread using `asyncio.to_thread`.
+  - Added fallback logic for data fetching.
+  - Implemented jitter for static data.
+
 ## Version 0.2.0
 
 ### New Features
@@ -24,3 +42,4 @@
 
 #### `packages/py-finance`
 - Added logging to `stock_service.py` for easier debugging.
+
