@@ -9,7 +9,7 @@ dependencies = [
     "uvicorn[standard]>=0.38.0",
     "pydantic>=2.12.0",
     "python-dotenv>=1.0.0",
-    "stockstir>=2.1.7",
+    "yfinance>=0.2.40",
     # local
     "py-finance",
     "ml-forecast",

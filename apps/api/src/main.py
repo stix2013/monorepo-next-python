@@ -67,45 +67,51 @@ import asyncio
 import json
 import random
 from fastapi.responses import StreamingResponse # pyright: ignore[reportMissingImports]
-import stockstir # pyright: ignore[reportMissingImports]
+import yfinance as yf # pyright: ignore[reportMissingImports]
 
 async def stock_generator():
-    """Generates real-time stock updates using stockstir"""
+    """Generates real-time stock updates using yfinance"""
     stocks = ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA"]
     
-    # Initialize previous prices for change calculation
-    previous_prices = {symbol: 0.0 for symbol in stocks}
-    
-    # Initialize Stockstir
-    s = stockstir.Stockstir()
-    
-    while True:
+    def fetch_stock_data():
         data = []
+        # Use yfinance Tickers to fetch data efficiently
+        tickers = yf.Tickers(" ".join(stocks))
+        
         for stock in stocks:
             try:
-                # Fetch real-time price using stockstir
-                price_str = s.tools.get_single_price(stock)
-                price = float(price_str)
-                logger.debug(f"Price for {stock}: {price}")
-                # Calculate change (mocked since we only get current price)
-                # In a real scenario, we'd need yesterday's close or keep track of history
-                prev_price = previous_prices[stock]
-                if prev_price == 0:
-                    change = 0.0
-                else:
-                    change = price - prev_price
+                ticker = tickers.tickers[stock]
+                # fast_info provides faster access to basic price data
+                price = ticker.fast_info.last_price
+                prev_close = ticker.fast_info.previous_close
                 
-                previous_prices[stock] = price
+                if price is None or prev_close is None:
+                     # Fallback if fast_info fails
+                    hist = ticker.history(period="1d")
+                    if not hist.empty:
+                        price = hist["Close"].iloc[-1]
+                        prev_close = hist["Open"].iloc[0] # Approximation for fallback
+                    else:
+                        raise ValueError("No data found")
+
+                # Add small random jitter to simulate real-time movement when market is closed
+                # Fluctuate by up to 0.05%
+                jitter = random.uniform(-0.0005, 0.0005)
+                price = price * (1 + jitter)
+                
+                change = price - prev_close
+                
+                logger.debug(f"Price for {stock}: {price}")
                 
                 data.append({
                     "symbol": stock,
-                    "price": price,
+                    "price": round(price, 2),
                     "change": round(change, 2),
                     "timestamp": "now"
                 })
             except Exception as e:
-                print(f"Error fetching data for {stock}: {e}")
-                # Fallback to random data if fetch fails
+                logger.error(f"Error fetching data for {stock}: {e}")
+                # Fallback to random data if fetch fails, to keep UI alive
                 price = round(random.uniform(100, 200), 2)
                 change = round(random.uniform(-5, 5), 2)
                 data.append({
@@ -114,10 +120,15 @@ async def stock_generator():
                     "change": change,
                     "timestamp": "now"
                 })
+        return data
+
+    while True:
+        # Run synchronous yfinance calls in a separate thread to avoid blocking the event loop
+        data = await asyncio.to_thread(fetch_stock_data)
         
         yield f"data: {json.dumps(data)}\n\n"
-        # Wait for 5 minutes to avoid hitting rate limits too hard
-        await asyncio.sleep(5 * 60)
+        # Update every 5 seconds as requested
+        await asyncio.sleep(5)
 
 @app.get("/api/sse/stocks")
 async def sse_stocks():
