@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { StockHistory } from '@stocks/shared';
-import { StockChart } from '@stocks/ui';
+import { StockChart, Button } from '@stocks/ui';
 import { JSX } from 'react/jsx-runtime';
 import { Footer } from '../../components/Footer';
 
@@ -87,9 +87,15 @@ export default function StockHistoryPage(): JSX.Element {
               </div>
             </div>
 
-            <button type="submit" disabled={loading} className="w-full mt-6 px-6 py-3 bg-linear-to-r from-cyan-400 to-blue-600 text-white font-bold rounded-lg shadow-lg hover:from-blue-600 hover:to-cyan-400 transform hover:scale-105 transition disabled:opacity-50 disabled:transform-none">
-              {loading ? '⏳ Loading...' : '🚀 Get Stock Data'}
-            </button>
+            <Button
+              type="submit"
+              disabled={loading}
+              isLoading={loading}
+              className="w-full mt-6 shadow-lg transform hover:scale-105 transition"
+              size="lg"
+            >
+              Get Stock Data
+            </Button>
           </form>
 
           {/* Error & Loading */}
