@@ -1,5 +1,28 @@
 # Change Log
 
+## Version 0.3.0
+
+### New Features
+
+- **Marketing Landing Page**: Implemented a modern, high-performance landing page.
+  - Accessible at `/home` (root `/` redirects here).
+  - Features Hero, Value Prop, Features, How It Works, Testimonials, and CTA sections.
+  - Fully responsive mobile-first design.
+
+### Detailed Changes
+
+#### `apps/web`
+- Created `app/home/page.tsx` with all landing page sections.
+- Updated `app/globals.css` with new animations (`fade-in`, `slide-up`, `pulse`) and smooth scrolling.
+- Updated `app/page.tsx` to redirect to `/home`.
+- Improved metadata in `app/layout.tsx`.
+
+#### `packages/ui`
+- Added reusable components:
+  - `Button`: Primary, secondary, and ghost variants.
+  - `FeatureCard`: Glassmorphism card for feature display.
+  - `Section`: Layout wrapper with background options.
+
 ## Version 0.2.1
 
 ### Improvements
