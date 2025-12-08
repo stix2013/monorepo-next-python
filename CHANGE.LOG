@@ -1,5 +1,21 @@
 # Change Log
 
+## Version 0.3.1
+
+### Improvements
+
+- **Unified Styling**: Updated `/realtime` and `/stocks` pages to match the modern branding of the `/home` page.
+  - Implemented a consistent dark theme and glassmorphism UI.
+  - Added a shared `Footer` component across all pages.
+  - Standardized specific UI elements (Submit Button on Stocks page) to match the primary design language.
+
+### Detailed Changes
+
+#### `apps/web`
+- Refactored `app/realtime/page.tsx` and `app/stocks/page.tsx` with updated layout and typography.
+- Created `components/Footer.tsx` and integrated it into all main pages.
+- Replaced native buttons with the shared `Button` component from `@stocks/ui`.
+
 ## Version 0.3.0
 
 ### New Features
