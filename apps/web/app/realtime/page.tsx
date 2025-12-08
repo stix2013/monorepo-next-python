@@ -14,20 +14,20 @@ export default function RealtimePage() {
   const { data, error, isConnected } = useSSE<StockData[]>('http://localhost:8000/api/sse/stocks');
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-950 via-blue-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-slate-900 p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold text-white text-center md:text-left drop-shadow-lg">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+          <h1 className="text-4xl font-bold text-white text-center md:text-left">
             ⚡ Real-time Market Data
           </h1>
 
-          <div className="mt-4 md:mt-0 flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-lg">
-            <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-green-400 animate-pulse' : 'bg-red-500'}`} />
-            <span className="text-blue-100 font-medium text-sm">
+          <div className="mt-4 md:mt-0 flex items-center gap-3 bg-slate-800 px-5 py-2.5 rounded-lg border border-slate-700">
+            <div className={`w-2.5 h-2.5 rounded-full ${isConnected ? 'bg-green-400 animate-pulse' : 'bg-red-500'}`} />
+            <span className="text-slate-200 font-medium text-sm">
               {isConnected ? 'Live Connection' : 'Disconnected'}
             </span>
             {error && (
-              <span className="text-red-300 text-xs ml-2 font-bold">
+              <span className="text-red-400 text-xs ml-2 font-bold">
                 ! Error
               </span>
             )}
@@ -35,25 +35,22 @@ export default function RealtimePage() {
         </div>
 
         {/* Grid Section */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 shadow-2xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data ? (
-              data.map((stock) => (
-                <div key={stock.symbol} className="transform hover:scale-105 transition duration-300">
-                  <StockCard
-                    symbol={stock.symbol}
-                    price={stock.price}
-                    change={stock.change}
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="col-span-full flex flex-col items-center justify-center py-20 text-blue-200/60">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400 mb-4"></div>
-                <p className="text-lg">Waiting for market stream...</p>
-              </div>
-            )}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          {data ? (
+            data.map((stock) => (
+              <StockCard
+                key={stock.symbol}
+                symbol={stock.symbol}
+                price={stock.price}
+                change={stock.change}
+              />
+            ))
+          ) : (
+            <div className="col-span-full flex flex-col items-center justify-center py-24 text-slate-400">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-500 mb-4"></div>
+              <p className="text-lg">Waiting for market stream...</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

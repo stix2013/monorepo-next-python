@@ -9,6 +9,13 @@ This is a monorepo for a stocks application, consisting of a Next.js web fronten
 - `packages/shared`: A shared TypeScript package for the web app.
 - `packages/py-finance`: A Python package with finance utilities for the api app.
 
+### Landing Page
+
+The application features a modern landing page at `/home` that demonstrates the value proposition and features of the platform.
+
+- **URL**: `http://localhost:3000/home`
+- **Features**: Responsive design, animations, and reusable UI components.
+
 ## Getting Started
 
 ### Prerequisites
@@ -48,5 +55,5 @@ This will start the Next.js development server on port 3000 and the FastAPI serv
 
 Alternatively, you can run them separately:
 
--   **Web app:** `bun run dev:web`
--   **API:** `bun run dev:api`
+- **Web app:** `bun run dev:web`
+- **API:** `bun run dev:api`
