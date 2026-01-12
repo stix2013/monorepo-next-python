@@ -1,0 +1,191 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - heading "Manage Your Stock Portfolio Effortlessly" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Real-time market data, intelligent insights, and powerful analytics—all in one beautiful dashboard.
+      - generic [ref=e8]:
+        - button "Get Started Free" [ref=e9]
+        - button "Watch Demo" [ref=e10]
+      - generic [ref=e14]:
+        - generic [ref=e15]: 📈
+        - paragraph [ref=e16]: Dashboard Preview
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "Why Choose Our Platform?" [level=2] [ref=e20]
+        - paragraph [ref=e21]: We solve the complexity of stock market tracking with simplicity and power.
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: ⚡
+          - heading "Real-Time Data" [level=3] [ref=e25]
+          - paragraph [ref=e26]: Get instant market updates with our Server-Sent Events technology. Never miss a price movement.
+        - generic [ref=e27]:
+          - generic [ref=e28]: 🎯
+          - heading "Smart Insights" [level=3] [ref=e29]
+          - paragraph [ref=e30]: AI-powered analytics help you make informed decisions. Understand trends before they happen.
+        - generic [ref=e31]:
+          - generic [ref=e32]: 🔒
+          - heading "Secure & Reliable" [level=3] [ref=e33]
+          - paragraph [ref=e34]: Enterprise-grade security with 99.9% uptime. Your data is always safe and accessible.
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Powerful Features" [level=2] [ref=e38]
+        - paragraph [ref=e39]: Everything you need to track, analyze, and optimize your investments.
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: 📊
+          - heading "Live Market Dashboard" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Monitor multiple stocks simultaneously with real-time price updates and change indicators.
+        - generic [ref=e45]:
+          - generic [ref=e46]: 📈
+          - heading "Advanced Charts" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Interactive charts with technical indicators, historical data, and customizable timeframes.
+        - generic [ref=e49]:
+          - generic [ref=e50]: 🔔
+          - heading "Price Alerts" [level=3] [ref=e51]
+          - paragraph [ref=e52]: Set custom alerts for price movements, volume changes, and market events.
+        - generic [ref=e53]:
+          - generic [ref=e54]: 📱
+          - heading "Mobile Responsive" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Access your portfolio anywhere, anytime. Fully optimized for mobile and tablet devices.
+        - generic [ref=e57]:
+          - generic [ref=e58]: 🤖
+          - heading "AI Forecasting" [level=3] [ref=e59]
+          - paragraph [ref=e60]: Machine learning models predict future price movements based on historical patterns.
+        - generic [ref=e61]:
+          - generic [ref=e62]: 📑
+          - heading "Portfolio Reports" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Generate comprehensive reports with performance metrics, gains/losses, and insights.
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - heading "How It Works" [level=2] [ref=e68]
+        - paragraph [ref=e69]: Get started in minutes with our simple 4-step process.
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]: "1"
+          - heading "Sign Up" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Create your free account in seconds. No credit card required.
+        - generic [ref=e75]:
+          - generic [ref=e76]: "2"
+          - heading "Add Stocks" [level=3] [ref=e77]
+          - paragraph [ref=e78]: Search and add stocks to your watchlist. Track unlimited symbols.
+        - generic [ref=e79]:
+          - generic [ref=e80]: "3"
+          - heading "Monitor Live" [level=3] [ref=e81]
+          - paragraph [ref=e82]: Watch real-time price updates and market movements on your dashboard.
+        - generic [ref=e83]:
+          - generic [ref=e84]: "4"
+          - heading "Get Insights" [level=3] [ref=e85]
+          - paragraph [ref=e86]: Receive AI-powered forecasts and actionable trading insights.
+    - generic [ref=e88]:
+      - generic [ref=e89]:
+        - heading "Trusted by Traders" [level=2] [ref=e90]
+        - paragraph [ref=e91]: Join thousands of investors who rely on our platform daily.
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - generic [ref=e95]: 👩‍💼
+            - generic [ref=e96]:
+              - generic [ref=e97]: Sarah Chen
+              - generic [ref=e98]: Day Trader
+          - paragraph [ref=e99]: “The real-time updates are incredibly fast. I can react to market changes instantly.”
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: 👨‍💼
+            - generic [ref=e103]:
+              - generic [ref=e104]: Michael Rodriguez
+              - generic [ref=e105]: Portfolio Manager
+          - paragraph [ref=e106]: “Best stock tracking platform I've used. The AI forecasts have improved my returns by 23%.”
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: 👩‍🔬
+            - generic [ref=e110]:
+              - generic [ref=e111]: Emily Watson
+              - generic [ref=e112]: Retail Investor
+          - paragraph [ref=e113]: “Simple, beautiful, and powerful. Finally, a platform that doesn't overwhelm beginners.”
+      - generic [ref=e114]:
+        - paragraph [ref=e115]: TRUSTED BY
+        - generic [ref=e116]:
+          - generic [ref=e117]: NASDAQ
+          - generic [ref=e118]: NYSE
+          - generic [ref=e119]: FINRA
+          - generic [ref=e120]: SEC
+    - generic [ref=e123]:
+      - heading "Ready to Transform Your Trading?" [level=2] [ref=e124]
+      - paragraph [ref=e125]: Join thousands of traders who are making smarter decisions with real-time data and AI insights.
+      - generic [ref=e126]:
+        - button "Start Free Trial" [ref=e127]
+        - button "Schedule Demo" [ref=e128]
+      - paragraph [ref=e129]: No credit card required • 14-day free trial • Cancel anytime
+    - contentinfo [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - generic [ref=e134]: 📈 StockTracker
+            - paragraph [ref=e135]: Real-time market intelligence for modern traders.
+          - generic [ref=e136]:
+            - heading "Product" [level=4] [ref=e137]
+            - list [ref=e138]:
+              - listitem [ref=e139]:
+                - link "Features" [ref=e140] [cursor=pointer]:
+                  - /url: /home#features
+              - listitem [ref=e141]:
+                - link "Live Dashboard" [ref=e142] [cursor=pointer]:
+                  - /url: /realtime
+              - listitem [ref=e143]:
+                - link "History Analysis" [ref=e144] [cursor=pointer]:
+                  - /url: /stocks
+              - listitem [ref=e145]:
+                - link "API" [ref=e146] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e147]:
+            - heading "Company" [level=4] [ref=e148]
+            - list [ref=e149]:
+              - listitem [ref=e150]:
+                - link "About" [ref=e151] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e152]:
+                - link "Blog" [ref=e153] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e154]:
+                - link "Careers" [ref=e155] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e156]:
+                - link "Contact" [ref=e157] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e158]:
+            - heading "Legal" [level=4] [ref=e159]
+            - list [ref=e160]:
+              - listitem [ref=e161]:
+                - link "Privacy Policy" [ref=e162] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e163]:
+                - link "Terms of Service" [ref=e164] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e165]:
+                - link "Cookie Policy" [ref=e166] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e167]:
+                - link "Disclaimer" [ref=e168] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e169]:
+          - paragraph [ref=e170]: © 2025 StockTracker. All rights reserved.
+          - generic [ref=e171]:
+            - link "Twitter" [ref=e172] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e173]: Twitter
+              - img [ref=e174]
+            - link "GitHub" [ref=e176] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e177]: GitHub
+              - img [ref=e178]
+            - link "LinkedIn" [ref=e180] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e181]: LinkedIn
+              - img [ref=e182]
+  - button "Open Next.js Dev Tools" [ref=e189] [cursor=pointer]:
+    - img [ref=e190]
+  - alert [ref=e193]
+```

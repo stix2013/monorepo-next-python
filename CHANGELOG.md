@@ -1,5 +1,43 @@
 # Change Log
 
+## Version 0.4.0
+
+### New Features
+
+- **Navigation Bar**: Implemented comprehensive navigation system across all pages.
+  - Fixed navigation bar with backdrop blur and transparency effects.
+  - Brand logo with StockTracker name and chart emoji.
+  - Navigation links to all pages: Home, Stocks, Real-Time, About.
+  - Active state highlighting for current page.
+  - Mobile-responsive hamburger menu with smooth transitions.
+  - Accessibility features with screen reader support.
+
+### Improvements
+
+- **Navigation Integration**: Added navigation component to root layout for consistent experience across all pages.
+- **Page Layout Updates**: Adjusted spacing on all pages to accommodate fixed navigation bar.
+- **Code Quality**: Fixed all linting issues and improved TypeScript type safety.
+- **Testing Coverage**: Added comprehensive test suite for navigation functionality with 15+ test cases.
+
+### Documentation
+
+- **Development Guidelines**: Created comprehensive AGENTS.md file with build commands, code style guidelines, and development workflows.
+- **File Standardization**: Renamed CHANGE.LOG to CHANGELOG.md following standard conventions.
+
+### Technical Changes
+
+#### `apps/web`
+- Created `components/Navigation.tsx` with mobile-responsive navigation
+- Updated `app/layout.tsx` to include navigation component
+- Modified page spacing in: `home/page.tsx`, `stocks/page.tsx`, `realtime/page.tsx`, `about/page.tsx`
+- Added `__tests__/Navigation.test.tsx` with comprehensive test coverage
+- Fixed linting issues in `about/page.tsx` and `stocks/[symbol]/page.tsx`
+- Removed unused imports and replaced `any` types with proper TypeScript interfaces
+
+#### Root
+- Created `AGENTS.md` with development guidelines for AI agents
+- Renamed `CHANGE.LOG` to `CHANGELOG.md` for standard conventions
+
 ## Version 0.3.1
 
 ### Improvements

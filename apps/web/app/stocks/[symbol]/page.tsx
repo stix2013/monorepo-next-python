@@ -1,15 +1,4 @@
 // apps/web/src/app/stocks/[symbol]/page.tsx
-interface StockHistory {
-  symbol: string;
-  native_currency: string;
-  target_currency?: string;
-  exchange_rate?: number;
-  period: string;
-  data: Array<{
-    date: string;
-    close: number;
-  }>;
-}
 
 export default async function StockPage({
   params,

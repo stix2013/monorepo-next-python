@@ -1,12 +1,33 @@
-import { Section, FeatureCard } from '@stocks/ui';
+import { Section } from '@stocks/ui';
 import { Metadata } from 'next';
 import { Footer } from '../../components/Footer';
+
+interface TechItem {
+  name: string;
+  description: string;
+}
+
+interface TechStack {
+  title: string;
+  items: TechItem[];
+}
+
+interface Philosophy {
+  title: string;
+  description: string;
+}
 
 export const metadata: Metadata = {
   title: 'About',
 };
 
-async function getAboutData() {
+async function getAboutData(): Promise<{
+  title: string;
+  subtitle: string;
+  frontend: TechStack;
+  backend: TechStack;
+  philosophy: Philosophy;
+}> {
   try {
     const res = await fetch('http://localhost:3000/api/about', {
       next: { revalidate: 3600 }
@@ -52,7 +73,7 @@ export default async function AboutPage() {
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
-      <Section className="pt-20 pb-16 md:pt-32 md:pb-24 text-center">
+      <Section className="pt-28 pb-16 md:pt-36 md:pb-24 text-center">
         <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
           {data.title}
         </h1>
@@ -70,7 +91,7 @@ export default async function AboutPage() {
               {data.frontend.title}
             </h2>
             <div className="space-y-6">
-              {data.frontend.items.map((item: any) => (
+              {data.frontend.items.map((item: TechItem) => (
                 <div key={item.name} className="flex items-start gap-4">
                   <div className="bg-blue-500/10 p-2 rounded-lg text-blue-400">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +113,7 @@ export default async function AboutPage() {
               {data.backend.title}
             </h2>
             <div className="space-y-6">
-              {data.backend.items.map((item: any) => (
+              {data.backend.items.map((item: TechItem) => (
                 <div key={item.name} className="flex items-start gap-4">
                   <div className="bg-green-500/10 p-2 rounded-lg text-green-400">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -16,7 +16,7 @@ export default function RealtimePage() {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <div className="p-8">
+      <div className="p-8 pt-22">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-10">
             <h1 className="text-4xl font-bold text-white text-center md:text-left">

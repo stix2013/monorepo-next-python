@@ -38,7 +38,7 @@ export default function StockHistoryPage(): JSX.Element {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <div className="p-6">
+      <div className="p-6 pt-22">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-white mb-8 text-center drop-shadow-lg">
             📈 Stock History Dashboard
