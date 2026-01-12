@@ -14,11 +14,15 @@
     "dev:api": "cd apps/api  && uv run uvicorn src.main:app --reload --port 8000",
     "lint": "bun run lint:web && bun run lint:api",
     "lint:web": "bun run --cwd apps/web lint",
-    "lint:api": "cd apps/api && ruff check src/"
+    "lint:api": "cd apps/api && ruff check src/",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@types/bun": "latest",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.7",
     "concurrently": "^9.2.1"
   },
   "peerDependencies": {

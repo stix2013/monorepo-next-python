@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
-      <Section className="pt-20 pb-16 md:pt-32 md:pb-24">
+      <Section className="pt-28 pb-16 md:pt-36 md:pb-24">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
             Manage Your Stock Portfolio{' '}
